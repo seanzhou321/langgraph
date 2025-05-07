@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block extrahead %}
+  <meta name="algolia-site-verification" content="165B7E7C89E49946" />
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Public+Sans&display=swap");
     :root {
@@ -32,17 +33,6 @@
 
     .md-typeset a {
       color: #1E88E5;
-    }
-
-    .md-sidebar {
-      display: none;
-    }
-
-    /* Show sidebar on mobile */
-    @media screen and (max-width: 1220px) {
-      .md-sidebar--primary {
-        display: block;
-      }
     }
 
     .md-typeset a:hover {
@@ -164,6 +154,39 @@
     .jupyter-wrapper .jp-Notebook .jp-Cell .jp-OutputPrompt {
       display: none !important;
     }
+
+    .md-banner {
+      background-color: #CFC9FA;
+      color: #000000;
+    }
+
+    .md-banner a {
+      color: #000000;
+      text-decoration: underline;
+    }
+
+    .md-banner a:hover {
+      color: #000000;
+    }
+
+    /* Dark mode banner links */
+    [data-md-color-scheme="slate"] .md-banner a {
+      color: #000000;
+    }
+
+    [data-md-color-scheme="slate"] .md-banner a:hover {
+      color: #000000;
+    }
+
+    /* control the navbar depth */
+    [data-md-level="2"] .md-nav {
+      display: none;
+    }
+
+    /* disable the collapse/expand icon in the navar */
+    .md-nav__icon {
+      display: none;
+    }
   </style>
 {% endblock %}
 
@@ -189,4 +212,9 @@
   {% else %}
     <title>{{ config.site_name }}</title>
   {% endif %}
+{% endblock %}
+
+
+{% block announce %}
+  <b>Join us at <a href="https://interrupt.langchain.com/" target="_blank" rel="noopener noreferrer"> Interrupt: The Agent AI Conference by LangChain</a> on May 13 & 14 in San Francisco!</b>
 {% endblock %}

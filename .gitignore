@@ -178,5 +178,6 @@ Untitled*.ipynb
 
 Chinook.db
 
-libs/langgraph/out
+.vercel
+.turbo
 docs/docs/tutorials/*/out

@@ -1,4 +1,4 @@
-# Interrupt
+# How to use the interrupt option
 
 This guide assumes knowledge of what double-texting is, which you can learn about in the [double-texting conceptual guide](../../concepts/double_texting.md).
 
@@ -83,7 +83,7 @@ Now, let's import our required packages and instantiate our client, assistant, a
 
 ## Create runs
 
-Now we can start our two runs and join the second on euntil it has completed:
+Now we can start our two runs and join the second one until it has completed:
 
 === "Python"
 
