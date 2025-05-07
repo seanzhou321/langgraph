@@ -1,0 +1,10 @@
+langgraph
+langchain
+langchain-experimental
+langchain-community
+langchain-openai
+langchain_anthropic
+langchain-ollama
+pandas
+ipykernel
+matplotlib
