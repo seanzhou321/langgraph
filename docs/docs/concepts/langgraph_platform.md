@@ -1,4 +1,13 @@
+---
+search:
+  boost: 2
+---
+
 # LangGraph Platform
+
+Watch this 4-minute overview of LangGraph Platform to see how it helps you build, deploy, and evaluate agentic applications.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pfAQxBS5z88?si=XGS6Chydn6lhSO1S" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Overview
 
@@ -11,6 +20,8 @@ The LangGraph Platform consists of several components that work together to supp
 - [LangGraph CLI](./langgraph_cli.md): LangGraph CLI is a command-line interface that helps to interact with a local LangGraph
 - [Python/JS SDK](./sdk.md): The Python/JS SDK provides a programmatic way to interact with deployed LangGraph Applications.
 - [Remote Graph](../how-tos/use-remote-graph.md): A RemoteGraph allows you to interact with any deployed LangGraph application as though it were running locally.
+- [LangGraph Control Plane](./langgraph_control_plane.md): The LangGraph Control Plane refers to the Control Plane UI where users create and update LangGraph Servers and the Control Plane APIs that support the UI experience.
+- [LangGraph Data Plane](./langgraph_data_plane.md): The LangGraph Data Plane refers to LangGraph Servers, the corresponding infrastructure for each server, and the "listener" application that continuously polls for updates from the LangGraph Control Plane.
 
 ![](img/lg_platform.png)
 
@@ -18,32 +29,7 @@ The LangGraph Platform offers a few different deployment options described in th
 
 ## Why Use LangGraph Platform?
 
-LangGraph Platform is designed to make deploying agentic applications seamless and production-ready. 
-
-For simpler applications, deploying a LangGraph agent can be as straightforward as using your own server logic—for example, setting up a FastAPI endpoint and invoking LangGraph directly.
-
-### Option 1: Deploying with Custom Server Logic
-
-For basic LangGraph applications, you may choose to handle deployment using your custom server infrastructure. Setting up endpoints with frameworks like [FastAPI](https://fastapi.tiangolo.com/) allows you to quickly deploy and run LangGraph as you would any other Python application:
-
-```python
-from fastapi import FastAPI
-from your_agent_package import graph
-
-app = FastAPI()
-
-@app.get("/foo")
-async def foo(...):
-    return await graph.ainvoke({...})
-```
-
-This approach works well for simple applications with straightforward needs and provides you with full control over the deployment setup. For example, you might use this for a single-assistant application that doesn’t require long-running sessions or persistent memory.
-
-### Option 2: Leveraging LangGraph Platform for Complex Deployments
-
-As your applications scale or add complex features, the deployment requirements often evolve. Running an application with more nodes, longer processing times, or a need for persistent memory can introduce challenges that quickly become time-consuming and difficult to manage manually. [LangGraph Platform](./langgraph_platform.md) is built to handle these challenges seamlessly, allowing you to focus on agent logic rather than server infrastructure.
-
-Here are some common issues that arise in complex deployments, which LangGraph Platform addresses:
+**LangGraph Platform** handles common issues that arise when deploying LLM applications to production, allowing you to focus on agent logic instead of managing server infrastructure.
 
 - **[Streaming Support](streaming.md)**: As agents grow more sophisticated, they often benefit from streaming both token outputs and intermediate states back to the user. Without this, users are left waiting for potentially long operations with no feedback. LangGraph Server provides [multiple streaming modes](streaming.md) optimized for various application needs.
 
